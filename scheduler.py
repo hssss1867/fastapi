@@ -5,8 +5,8 @@ from validator import Tester
 import time
 import uvicorn
 
-TESTER_CYCLE = 20
-GETTER_CYCLE = 60
+TESTER_CYCLE = 10
+GETTER_CYCLE = 600
 TESTER_ENABLED = True
 GETTER_ENABLED = True
 API_ENABLED = True
