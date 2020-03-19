@@ -1,14 +1,14 @@
 import requests
 from pyquery import PyQuery as pq
-from fake_useragent import UserAgent
 import time
+
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
 
 
 class Crawler(object):
 
     def getip(self, link):
-        ua = UserAgent(use_cache_server=False)
-        headers = {"User-Agent": ua.random}
         res = requests.get(link, headers=headers,)
         doc = pq(res.text)
         info = doc('tr.odd')

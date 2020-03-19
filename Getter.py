@@ -21,10 +21,10 @@ class Getter(object):
             proxies = self.crawler.run()
             for ip in proxies:
                 self.redis.add(ip)
-                # print(ip)
-        print('结束,共抓取',self.redis.count())
+                print('已抓取', ip)
+        print('结束,共抓取', self.redis.count())
         for i in self.redis.all():
-            print(i,'当前分数',self.redis.score(i))
+            print(i, '当前分数', self.redis.score(i))
 
 
 if __name__ == '__main__':

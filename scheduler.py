@@ -59,32 +59,3 @@ class Scheduler():
 if __name__ == '__main__':
     scheduler = Scheduler()
     scheduler.run()
-
-
-
-
-
-
-
-
-
-
-
-    # multiprocessing.freeze_support()
-    # scheduler = Scheduler()
-    # if API_ENABLED:
-    #     api_process = multiprocessing.Process(target=scheduler.scheduler_apis)
-    #
-    # if GETTER_ENABLED:
-    #     getter_process = multiprocessing.Process(target=scheduler.scheduler_getter)
-    #
-    # if TESTER_ENABLED:
-    #     tester_process = multiprocessing.Process(target=scheduler.schedule_tester)
-    #
-    #
-    #
-    #
-    # tester_process.start()
-    # getter_process.start()
-    # api_process.start()
-

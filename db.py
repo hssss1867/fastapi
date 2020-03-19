@@ -2,7 +2,7 @@ import redis
 from random import choice
 
 
-MAX_SCORE = 100
+MAX_SCORE = 20
 MIN_SCORE = 0
 INITIAL_SCORE = 10
 REDIS_HOST = 'localhost'
@@ -25,7 +25,7 @@ class RedisClient(object):
         if len(result):
             return choice(result)
         else:
-            result = self.db.zrevrange(REDIS_KEY, 0, 100)
+            result = self.db.zrevrange(REDIS_KEY, 0, 20)
             if len(result):
                 return choice(result)
             else:
@@ -58,6 +58,7 @@ class RedisClient(object):
 
     def remove(self, proxy):
         return self.db.zrem(REDIS_KEY, proxy)
+
 
 if __name__ == '__main__':
     db = RedisClient()

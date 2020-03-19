@@ -49,7 +49,7 @@ class Tester(object):
         real_proxy = {'https': 'https://' + proxy}
         print('测试', real_proxy)
         try:
-            res = requests.get(TEST_URL, proxies=real_proxy, timeout=5)
+            res = requests.get(TEST_URL, proxies=real_proxy, timeout=10)
             if res.status_code in VALID_STATUS_CODES:
                 self.redis.max(proxy)
             else:
